@@ -1,0 +1,172 @@
+﻿<Page x:Class="WpfApp36.AutoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp36"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1336" Background="White" 
+      Title="AutoPage">
+    <Page.Resources>
+        <local:GreenCoverter x:Key="GreenCoverter"/>
+        <local:YelloConverter x:Key="YelloConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Border BorderBrush="Black" BorderThickness="1" >
+                <Image Source="imege/anh.png"  />
+            </Border>
+            <TextBox Name="TbAuto" Grid.Column="1" />
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1">
+                <TextBlock Text="PRODUCTION COUNTER" FontSize="55" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+            
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                 </Grid.RowDefinitions>
+                <Grid Background="Gray">
+                    <TextBlock Text="Model" FontSize="40" VerticalAlignment="Center" TextAlignment="Center" Margin="80 0 0 0"/>
+                    <CheckBox FontSize="24" VerticalAlignment="Center" VerticalContentAlignment="Center" 
+                              FontWeight="Bold" FontStyle="Italic" Foreground="Red" Margin="20 0 0 0"
+                              Name="chbSpecical">SPECICAL</CheckBox>
+                </Grid>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1">
+                    <TextBlock Name="TblModel" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+           
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="2" Background="Gray">
+                <Border BorderBrush="Black" BorderThickness="1" >
+                    <TextBlock Text="Leader" FontSize="51" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+           
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="3">
+                <TextBlock Name="TblLeader" FontSize="51"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Grid Grid.Column="0" Background="Gray">
+                <Border BorderBrush="Black" BorderThickness="1" >
+                    <TextBlock Text="Line" FontSize="51" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+            
+            <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="1">
+                <TextBlock Name="TblLine" FontSize="51"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Grid Grid.Column="4" Background="Gray">
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="4">
+                    <TextBlock Text="Worker" FontSize="51" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+           
+            <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="5">
+                <TextBlock Name="TblWorker" FontSize="51"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1">
+                <TextBlock Text="Product Count" FontSize="51"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1">
+                <TextBlock  Text="Target" VerticalAlignment="Center" FontSize="51"  HorizontalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2">
+                <TextBlock Text="Text" Name="TblTarget" FontSize="51" HorizontalAlignment="Center" TextAlignment="Center"/>
+            </Border>
+        </Grid>
+
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1">
+                <TextBlock Text="Time" FontSize="51" TextAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1">
+                <TextBlock Text="Result" FontSize="51" TextAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2">
+                <TextBlock Text="Tact" FontSize="51" TextAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="3">
+                <TextBlock Text="Compare" FontSize="51" TextAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+
+        </Grid>
+        <ListView Name="LvMain" Grid.Row="4">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid  >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Grid Background="{Binding Mausac,Converter={StaticResource YelloConverter}}">
+                            <Border BorderBrush="Black" BorderThickness="1">
+                                <TextBlock Text="{Binding LineName}" FontSize="51" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Name="GridThucTe" MouseDown="GridThucTe_MouseDown" Background="{Binding Mausac,Converter={StaticResource YelloConverter}}" >
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1">
+                                <TextBlock  Text="{Binding SanLuongThucTe,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,StringFormat='{}0,0'}"   Width="200" FontSize="51" TextAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Column="2" Name="GridTutao" MouseDown="GridTutao_MouseDown" Background="{Binding Mausac,Converter={StaticResource YelloConverter}}" >
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2">
+                                <TextBlock  Text="{Binding SanLuongTuTao,StringFormat='{}0,0'}"   Width="200" FontSize="51" TextAlignment="Center"/>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Column="3" Background="{Binding SanLuongChenh,Converter={StaticResource GreenCoverter}}">
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="3">
+                                <TextBlock Text="{Binding SanLuongChenh,StringFormat='{}0,0'}"  TextAlignment="Center"  Width="200"  FontSize="51" />
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
